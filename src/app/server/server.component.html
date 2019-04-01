@@ -1,1 +1,3 @@
-<p applystyle [Dcolor]="'green'" [Acolor]="'grey'">Server works</p>
+<!-- <p applystyle [Dcolor]="'green'" [Acolor]="'grey'">Server works</p> -->
+
+<p [ngStyle]="{color:getcolor()}">Server with ID {{serverid}} is {{serverStatus}}</p>
