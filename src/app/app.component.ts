@@ -7,27 +7,44 @@ import{AppRoutingModule} from './app-routing/app-routing.module';
   styleUrls: [ './app.component.css' ]
 })
 export class AppComponent implements ngInit  {
-  nums : [] ;
-  name = 'Angul';
-  txt:string;
-  count : number=0;
-  isEven : boolean = false;
-  txt= 'Put mouse here';
- ngOnInit(){
-this.nums = [1,2,3,4,5,6,7];
-   this.count=this.txt.length;
- }
- getcount(){
-  console.log("haifirst");
-this.count=this.txt.length;
-console.log("hai");
+
+serverElements = [{type:'server',name : 'TestServer',content:'Just a test!'}];
+  OnServerAdded(serverData :{serverName : string,serverContent : string}){
+this.serverElements.push({
+  type :'server',
+  name : serverData.serverName,
+  content : serverData.serverContent
+});
   }
-showeven(){
-this.isEven=true;
+  OnBlueprintServerAdded(blueprintData :{serverName : string,serverContent : string}){
+    this.serverElements.push({
+  type :'blueprint',
+  name : blueprintData.serverName,
+  content : blueprintData.serverContent
+});
+  }
 
-}
-onclicking(evnt:Event){
-console.log('event emitted');
+//   nums : [] ;
+//   name = 'Angul';
+//   txt:string;
+//   count : number=0;
+//   isEven : boolean = false;
+//   txt= 'Put mouse here';
+//  ngOnInit(){
+// this.nums = [1,2,3,4,5,6,7];
+//    this.count=this.txt.length;
+//  }
+//  getcount(){
+//   console.log("haifirst");
+// this.count=this.txt.length;
+// console.log("hai");
+//   }
+// showeven(){
+// this.isEven=true;
 
-}
+// }
+// onclicking(evnt:Event){
+// console.log('event emitted');
+
+// }
 }
