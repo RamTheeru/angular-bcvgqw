@@ -4,18 +4,20 @@
       <div class="row">
         <div class="col-sm-5 form-group">
           <label for="name">Server Name</label>
-          <input type="text"  class="form-control" [(ngModel)]="newServerName">
-        </div>
+          <!-- <input type="text"  class="form-control" [(ngModel)]="newServerName"> -->
+           <input type="text"  class="form-control" #newSrvrName>
+    </div>
           <div class="col-sm-2 form-group">
           <label for="amount">Content</label>
-          <input type="text"  class="form-control" [(ngModel)]="newServerContent">
+          <!-- <input type="text"  class="form-control" [(ngModel)]="newServerContent"> -->
+           <input type="text"  class="form-control" #serverContent>
         </div>
       </div>
       <div class="row">
         <div class="col-xs-12"> 
-          <button class="btn btn-success" (click)="OnAddServer()" type="submit">AddServer</button>
+          <button class="btn btn-success" (click)="OnAddServer(newSrvrName)" type="submit">AddServer</button>
           
-          <button class="btn btn-primary" (click)="OnAddBlueprintServer()" type="button">AddBluePrintServer</button>
+          <button class="btn btn-primary" (click)="OnAddBlueprintServer(newSrvrName)" type="button">AddBluePrintServer</button>
 
         </div>
       </div>
