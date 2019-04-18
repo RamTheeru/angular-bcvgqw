@@ -16,6 +16,9 @@ this.serverElements.push({
   content : serverData.serverContent
 });
   }
+   Onchangefirst(){
+   this.serverElements[0].name='changed!!!';
+ }
   OnBlueprintServerAdded(blueprintData :{serverName : string,serverContent : string}){
     this.serverElements.push({
   type :'blueprint',

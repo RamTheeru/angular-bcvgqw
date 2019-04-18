@@ -32,7 +32,8 @@
   <hr>
   <div class="row">
     <div class="col-xs-12">
-      <app-server-element *ngFor="let serverElement   of serverElements" [srvElement]="serverElement" >
+      <button class="btn btn-primary" (click)="Onchangefirst()">Change First Element</button>
+      <app-server-element *ngFor="let serverElement   of serverElements" [srvElement]="serverElement" [name]="serverElement.name">
 
       </app-server-element>
     </div>
