@@ -7,7 +7,7 @@ import{AppRoutingModule} from './app-routing/app-routing.module';
   styleUrls: [ './app.component.css' ]
 })
 export class AppComponent implements ngInit  {
-
+loadedfeature : string='recipe' ;
 serverElements = [{type:'server',name : 'TestServer',content:'Just a test!'}];
   OnServerAdded(serverData :{serverName : string,serverContent : string}){
 this.serverElements.push({
@@ -19,12 +19,16 @@ this.serverElements.push({
    Onchangefirst(){
    this.serverElements[0].name='changed!!!';
  }
+ onNavigate(feature : string){
+this.loadedfeature=feature;
+}
   OnBlueprintServerAdded(blueprintData :{serverName : string,serverContent : string}){
     this.serverElements.push({
   type :'blueprint',
   name : blueprintData.serverName,
   content : blueprintData.serverContent
 });
+
   }
 
 //   nums : [] ;
