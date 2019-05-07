@@ -1,5 +1,6 @@
 import { Component,ngInit } from '@angular/core';
 import{AppRoutingModule} from './app-routing/app-routing.module';
+import {LoggingService} from './logging.service';
 
 @Component({
   selector: 'my-app',
@@ -7,6 +8,8 @@ import{AppRoutingModule} from './app-routing/app-routing.module';
   styleUrls: [ './app.component.css' ]
 })
 export class AppComponent implements ngInit  {
+  message : string = '';
+
 loadedfeature : string='recipe' ;
 serverElements = [{type:'server',name : 'TestServer',content:'Just a test!'}];
   OnServerAdded(serverData :{serverName : string,serverContent : string}){
@@ -15,6 +18,12 @@ this.serverElements.push({
   name : serverData.serverName,
   content : serverData.serverContent
 });
+this.message = 'New Server service added';
+
+
+  }
+  constructor(private serv : LoggingService){
+
   }
    Onchangefirst(){
    this.serverElements[0].name='changed!!!';
@@ -28,7 +37,7 @@ this.loadedfeature=feature;
   name : blueprintData.serverName,
   content : blueprintData.serverContent
 });
-
+this.message = 'New Blueprint Server added';
   }
 
 //   nums : [] ;

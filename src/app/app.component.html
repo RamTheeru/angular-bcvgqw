@@ -14,28 +14,28 @@
 <!-- <nav>
   <a routerLink="/heroes">Heroes</a>
 </nav> -->
-<app-header (featureselected)="onNavigate($event)"></app-header>
+<!-- <app-header (featureselected)="onNavigate($event)"></app-header>
 <div class="container">
   <div class="row"><div class="col-md-12">
   <app-recipes *ngIf="loadedfeature==='recipe'"></app-recipes>
   <app-shopping-list *ngIf="loadedfeature!=='recipe'"></app-shopping-list>
     </div></div>
-</div>
+</div> -->
 
 
 
 
 
-<!-- <div class="container">
+<div class="container">
   <app-cockpit (serverCreated)="OnServerAdded($event)"
   (bpCreated)="OnBlueprintServerAdded($event)"></app-cockpit>
   <hr>
   <div class="row">
     <div class="col-xs-12">
-      <button class="btn btn-primary" (click)="Onchangefirst()">Change First Element</button>
+      <!-- <button class="btn btn-primary" (click)="Onchangefirst()">Change First Element</button> -->
       <app-server-element *ngFor="let serverElement   of serverElements" [srvElement]="serverElement" [name]="serverElement.name">
 
       </app-server-element>
     </div>
   </div>
-</div> -->
+</div>
