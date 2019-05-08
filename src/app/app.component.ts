@@ -5,7 +5,8 @@ import {LoggingService} from './logging.service';
 @Component({
   selector: 'my-app',
   templateUrl: './app.component.html',
-  styleUrls: [ './app.component.css' ]
+  styleUrls: [ './app.component.css' ],
+  providers:[LoggingService]
 })
 export class AppComponent implements ngInit  {
   message : string = '';
@@ -18,8 +19,8 @@ this.serverElements.push({
   name : serverData.serverName,
   content : serverData.serverContent
 });
-this.message = 'New Server service added';
-
+this.message = 'New Server service added!!!!!!!!!!!!!!!';
+this.serv.OnAddserver(this.message);
 
   }
   constructor(private serv : LoggingService){
