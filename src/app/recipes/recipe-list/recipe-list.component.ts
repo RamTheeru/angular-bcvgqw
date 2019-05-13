@@ -1,5 +1,6 @@
 import { Component, OnInit,EventEmitter,Output } from '@angular/core';
 import {Recipe } from '../recipe';
+import { RecipeService } from '../recipe.service';
 @Component({
   selector: 'app-recipe-list',
   templateUrl: './recipe-list.component.html',
@@ -7,23 +8,11 @@ import {Recipe } from '../recipe';
 })
 export class RecipeListComponent implements OnInit {
 @Output()  recipewasselected = new EventEmitter<Recipe>();
-recipes:Recipe[] =[
 
-]; 
-recipe : Recipe={
-name: 'A test recipe',
-description:'This is a simple test.',
-imagePath :'https://www.logolynx.com/images/logolynx/82/829ba7822e43ebe89394d1ecbbf152b7.jpeg' 
-}
-rcp : Recipe={
-name: 'A test recipe',
-description:'This is a simple test.',
-imagePath :'https://www.logolynx.com/images/logolynx/82/829ba7822e43ebe89394d1ecbbf152b7.jpeg' 
-}
-
-  constructor() {
-    this.recipes.push(this.recipe);
-     this.recipes.push(this.rcp);
+recipes:Recipe[] ;
+  constructor(private recipeService : RecipeService) {
+    // this.recipes.push(this.recipe);
+    //  this.recipes.push(this.rcp);
    }
    onRecipeSelected(recipe : Recipe)
    {
@@ -33,6 +22,7 @@ imagePath :'https://www.logolynx.com/images/logolynx/82/829ba7822e43ebe89394d1ec
    }
 
   ngOnInit() {
+    this.recipes = this.recipeService.getRecipes();
   }
 
 }
