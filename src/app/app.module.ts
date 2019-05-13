@@ -31,6 +31,6 @@ import { ShoppingListService } from './shopping-list/shopping-list.service';
   imports:      [ BrowserModule, FormsModule ],
   declarations: [ AppComponent, HelloComponent,applyMyStyle, HeroesComponent, HeroDetailComponent, ServerComponent, ServersComponent, HeaderComponent, RecipesComponent, RecipeListComponent, RecipeDetailComponent, RecipeItemComponent, ShoppingListComponent, ShoppingEditComponent, CockpitComponent, ServerElementComponent, UnlessDirective, DropdownDirective ],
   bootstrap:    [ AppComponent ],
-  providers: [LoggingService, HeroServiceService, RecipeService, ShoppingListService]
+  providers: [LoggingService, HeroServiceService, ShoppingListService]
 })
 export class AppModule { }
