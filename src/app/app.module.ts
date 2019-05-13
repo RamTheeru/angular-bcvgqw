@@ -24,12 +24,13 @@ import { DropdownDirective } from './shared/dropdown.directive';
 import { LoggingService } from './logging.service';
 import { HeroServiceService } from './hero-service.service';
 import { RecipeService } from './recipes/recipe.service';
+import { ShoppingListService } from './shopping-list/shopping-list.service';
 
 
 @NgModule({
   imports:      [ BrowserModule, FormsModule ],
   declarations: [ AppComponent, HelloComponent,applyMyStyle, HeroesComponent, HeroDetailComponent, ServerComponent, ServersComponent, HeaderComponent, RecipesComponent, RecipeListComponent, RecipeDetailComponent, RecipeItemComponent, ShoppingListComponent, ShoppingEditComponent, CockpitComponent, ServerElementComponent, UnlessDirective, DropdownDirective ],
   bootstrap:    [ AppComponent ],
-  providers: [LoggingService, HeroServiceService, RecipeService]
+  providers: [LoggingService, HeroServiceService, RecipeService, ShoppingListService]
 })
 export class AppModule { }
