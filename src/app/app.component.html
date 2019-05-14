@@ -14,11 +14,11 @@
 <!-- <nav>
   <a routerLink="/heroes">Heroes</a>
 </nav> -->
-<app-header (featureselected)="onNavigate($event)"></app-header>
-<div class="container">
+<app-header class="mycls" (featureselected)="onNavigate($event)"></app-header>
+<div class="container" >
   <div class="row"><div class="col-md-12">
-  <app-recipes *ngIf="loadedfeature==='recipe'"></app-recipes>
-  <app-shopping-list *ngIf="loadedfeature!=='recipe'"></app-shopping-list>
+  <app-recipes class="mycls2"  *ngIf="loadedfeature==='recipe'"></app-recipes>
+  <app-shopping-list class="mycls2" *ngIf="loadedfeature!=='recipe'"></app-shopping-list>
     </div></div>
 </div>
 

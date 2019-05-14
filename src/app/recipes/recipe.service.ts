@@ -1,8 +1,8 @@
 import { Injectable,Output,EventEmitter} from '@angular/core';
 import {Recipe } from './recipe';
 import {Ingredient} from '../shared/ingredient';
-// import {ShoppingListService} from '../shopping-list/shopping-list.service';
-// @Injectable()
+ import {ShoppingListService} from '../shopping-list/shopping-list.service';
+ @Injectable()
 export class RecipeService {
  recipeSelected = new EventEmitter<Recipe>();
 private recipes:Recipe[] =[ 
@@ -25,6 +25,10 @@ private recipes:Recipe[] =[
 
 
 ]; 
+addIngredientsToShopList(ingredients : Ingredient[]){
+  this.shopServ.addIngredients(ingredients);
+
+}
 ingredients : Ingredient[];
 // recipe : Recipe={
 // name: 'A test recipe',
@@ -37,7 +41,7 @@ ingredients : Ingredient[];
 // description:'This is a simple test.',
 // imagePath :'https://www.logolynx.com/images/logolynx/82/829ba7822e43ebe89394d1ecbbf152b7.jpeg',[] 
 // }
-  constructor() { 
+  constructor(private shopServ : ShoppingListService) { 
    
     //    this.recipes.push(this.recipe);
     //  this.recipes.push(this.rcp);

@@ -14,8 +14,8 @@ ingredients :Ingredient[];
   ngOnInit() {
     this.ingredients = this.shopService.getIngredients();
     this.shopService.ingredientAddedd.subscribe(
-      (ingredient : Ingredient)=>{
-        this.ingredients.push(ingredient);
+      (ingredients : Ingredient[])=>{
+        this.ingredients=ingredients;
       }
     );
   }
