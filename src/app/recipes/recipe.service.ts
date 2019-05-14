@@ -37,10 +37,10 @@ ingredients : Ingredient[];
 // description:'This is a simple test.',
 // imagePath :'https://www.logolynx.com/images/logolynx/82/829ba7822e43ebe89394d1ecbbf152b7.jpeg',[] 
 // }
-  constructor(private shopService : ShoppingListService) { 
-    this.ingredients = this.shopService.getIngredients();
-       this.recipes.push(this.recipe);
-     this.recipes.push(this.rcp);
+  constructor() { 
+   
+    //    this.recipes.push(this.recipe);
+    //  this.recipes.push(this.rcp);
   }
 getRecipes(){
  return this.recipes.slice();
