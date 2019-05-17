@@ -25,10 +25,11 @@ import { LoggingService } from './logging.service';
 import { HeroServiceService } from './hero-service.service';
 import { RecipeService } from './recipes/recipe.service';
 import { ShoppingListService } from './shopping-list/shopping-list.service';
+import {AppRoutingModule} from './app-routing.module';
 
 
 @NgModule({
-  imports:      [ BrowserModule, FormsModule ],
+  imports:      [ BrowserModule, FormsModule,AppRoutingModule ],
   declarations: [ AppComponent, HelloComponent,applyMyStyle, HeroesComponent, HeroDetailComponent, ServerComponent, ServersComponent, HeaderComponent, RecipesComponent, RecipeListComponent, RecipeDetailComponent, RecipeItemComponent, ShoppingListComponent, ShoppingEditComponent, CockpitComponent, ServerElementComponent, UnlessDirective, DropdownDirective ],
   bootstrap:    [ AppComponent ],
   providers: [LoggingService, HeroServiceService, ShoppingListService]
