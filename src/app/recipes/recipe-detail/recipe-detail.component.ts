@@ -7,7 +7,7 @@ import {RecipeService} from '../recipe.service';
   styleUrls: ['./recipe-detail.component.css']
 })
 export class RecipeDetailComponent implements OnInit {
-@Input() recipe : Recipe ;
+ recipe : Recipe ;
   constructor(private recipeServ : RecipeService) { }
 
   ngOnInit() {

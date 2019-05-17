@@ -22,6 +22,7 @@ recipes:Recipe[] ;
 //    }
 
   ngOnInit() {
+    console.log(this.recipes);
     this.recipes = this.recipeService.getRecipes();
   }
 
