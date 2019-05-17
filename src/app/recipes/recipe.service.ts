@@ -47,6 +47,7 @@ ingredients : Ingredient[];
     //  this.recipes.push(this.rcp);
   }
 getRecipes(){
+  console.log(this.recipes)
  return this.recipes.slice();
 }
 getRecipeById(id : number){
