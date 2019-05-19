@@ -9,15 +9,15 @@ import {RecipeService} from '../recipe.service';
 })
 export class RecipeDetailComponent implements OnInit {
  recipe : Recipe ;
- id : number;
+ @Input() recipeid : number;
   constructor(private recipeServ : RecipeService,private route : ActivatedRoute) { }
 
   ngOnInit() {
        //const id = this.route.snapshot.params['id'];
      this.route.params.subscribe(
       (params : Params)=>{
-        this.id = +params['id'];
-        this.recipe = this.recipeServ.getRecipeById(this.id);
+        this.recipeid = +params['id'];
+        this.recipe = this.recipeServ.getRecipeById(this.recipeid);
         console.log(this.recipe);
       }
     )

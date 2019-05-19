@@ -17,7 +17,7 @@
       </div>
       </div>
       </a>  -->
-    <app-recipe-item  *ngFor="let recipeEl of recipes"
+    <app-recipe-item  *ngFor="let recipeEl of recipes; let i = index"
    [recipe]="recipeEl"  ></app-recipe-item>
   </div>
 </div>
