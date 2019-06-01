@@ -15,9 +15,9 @@ selectedRecipe : Recipe;
 // this.selectedRecipe=recp;
 // }
   ngOnInit() {
-    this.recipeService.recipeSelected.subscribe(
-(recipe : Recipe )=>{this.selectedRecipe=recipe;}
-    );
+//     this.recipeService.recipeSelected.subscribe(
+// (recipe : Recipe )=>{this.selectedRecipe=recipe;}
+//     );
   }
 
 

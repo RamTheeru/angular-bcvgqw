@@ -18,6 +18,7 @@ OnAddItem(){
   const ingName = this.nameInputRef.nativeElement.value;
 const ingAmount  =this.amountInputRef.nativeElement.value;
 const newIngredient = new Ingredient(ingName,ingAmount);
-this.shopService.ingredientAddedd.emit(newIngredient);
+//this.shopService.ingredientAddedd.next(newIngredient);
+this.shopService.addIngredient(newIngredient);
 }
 }
