@@ -28,5 +28,7 @@ ingredients :Ingredient[];
   ngOnDestroy(){
     this.subsc.unsubscribe();
   }
-
+onEditItem(index:number){
+  this.shopService.startedEditing.next(index);
+}
 }
