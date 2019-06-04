@@ -39,7 +39,15 @@ OnAddItem(form : NgForm){
 // const ingAmount  =this.amountInputRef.nativeElement.value;
  const newIngredient = new Ingredient(value.name,value.amount);
 //this.shopService.ingredientAddedd.next(newIngredient);
+if(this.editMode)
+{
+  this.shopService.updateIngredient(this.editedItemindex,newIngredient);
+}
+else{
 this.shopService.addIngredient(newIngredient);
+}
+this.editMode = false
+form.reset();
 }
 ngOnDestroy(){
 this.subscrp.unsubscribe();
