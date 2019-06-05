@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
+import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import {applyMyStyle} from './MyDirective';
 import { AppComponent } from './app.component';
 import { HelloComponent } from './hello.component';
@@ -31,7 +31,7 @@ import { RecipeEditComponent } from './recipes/recipe-edit/recipe-edit.component
 
 
 @NgModule({
-  imports:      [ BrowserModule, FormsModule,AppRoutingModule ],
+  imports:      [ BrowserModule, FormsModule,AppRoutingModule,ReactiveFormsModule ],
   declarations: [ AppComponent, HelloComponent,applyMyStyle, HeroesComponent, HeroDetailComponent, ServerComponent, ServersComponent, HeaderComponent, RecipesComponent, RecipeListComponent, RecipeDetailComponent, RecipeItemComponent, ShoppingListComponent, ShoppingEditComponent, CockpitComponent, ServerElementComponent, UnlessDirective, DropdownDirective, RecipeStartComponent, RecipeEditComponent ],
   bootstrap:    [ AppComponent ],
   providers: [LoggingService, HeroServiceService, ShoppingListService]
