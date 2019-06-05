@@ -52,4 +52,12 @@ form.reset();
 ngOnDestroy(){
 this.subscrp.unsubscribe();
 }
+onClear(){
+  this.slform.reset();
+  this.editMode = false;
+}
+onDelete(){
+  this.shopService.deleteIngredient(this.editedItemindex);
+  this.onClear();
+}
 }
