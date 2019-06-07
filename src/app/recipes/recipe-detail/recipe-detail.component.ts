@@ -28,4 +28,8 @@ this.recipeServ.addIngredientsToShopList(this.recipe.ingredients);
 onEditRecipe(){
   this.router.navigate(['edit'],{relativeTo:this.route});
 }
+onDeleteRecipe(){
+  this.recipeServ.DeleteRecipe(this.recipeid);
+  this.router.navigate(['/recipes']);
+}
 }

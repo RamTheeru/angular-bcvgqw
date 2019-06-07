@@ -34,6 +34,6 @@ import { RecipeEditComponent } from './recipes/recipe-edit/recipe-edit.component
   imports:      [ BrowserModule, FormsModule,AppRoutingModule,ReactiveFormsModule ],
   declarations: [ AppComponent, HelloComponent,applyMyStyle, HeroesComponent, HeroDetailComponent, ServerComponent, ServersComponent, HeaderComponent, RecipesComponent, RecipeListComponent, RecipeDetailComponent, RecipeItemComponent, ShoppingListComponent, ShoppingEditComponent, CockpitComponent, ServerElementComponent, UnlessDirective, DropdownDirective, RecipeStartComponent, RecipeEditComponent ],
   bootstrap:    [ AppComponent ],
-  providers: [LoggingService, HeroServiceService, ShoppingListService]
+  providers: [LoggingService, HeroServiceService, ShoppingListService,RecipeService]
 })
 export class AppModule { }

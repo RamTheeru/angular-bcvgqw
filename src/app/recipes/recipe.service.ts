@@ -1,10 +1,12 @@
 import { Injectable,Output,EventEmitter} from '@angular/core';
 import {Recipe } from './recipe';
 import {Ingredient} from '../shared/ingredient';
+import {Subject} from 'rxjs/Subject';
  import {ShoppingListService} from '../shopping-list/shopping-list.service';
  @Injectable()
 export class RecipeService {
 //  recipeSelected = new EventEmitter<Recipe>();
+recipeChanges = new Subject<Recipe[]>();
 private recipes:Recipe[] =[ 
   new Recipe ( 
     'Tasty Schnitzel',
@@ -52,5 +54,17 @@ getRecipes(){
 }
 getRecipeById(id : number){
  return this.recipes[id];
+}
+addRecipe(recp : Recipe){
+this.recipes.push(recp);
+this.recipeChanges.next(this.recipes.slice());
+}
+updateRecipe(index:number,recp:Recipe){
+this.recipes[index]=recp;
+this.recipeChanges.next(this.recipes.slice());
+}
+DeleteRecipe(index : number){
+  this.recipes.splice(index,1);
+  this.recipeChanges.next(this.recipes.slice());
 }
 }
