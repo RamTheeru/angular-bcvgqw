@@ -33,9 +33,12 @@
     </ul>
 
         <ul class="nav navbar-nav navbar-right">
+          <ng-template [ngIf]="!auth.isAuth()">
           <li><a routerLink="/signup">Sign Up</a></li>
           <li><a routerLink="/signin">Sign In</a></li>
-       <li class="dropdown" appDropdown>
+          </ng-template>
+        <li><a style="cursor:pointer;" *ngIf="auth.isAuth()" (click)="onlogout()">Sign Out</a></li>
+       <li class="dropdown" appDropdown *ngIf="auth.isAuth()">
          <a href="#" class="dropdown-toggle" role="button">Manage <span class="caret"></span></a>
          <ul class="dropdown-menu">
                  <li><a (click)="storeRecipes()" >Save Data</a></li>
