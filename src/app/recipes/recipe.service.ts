@@ -27,6 +27,10 @@ private recipes:Recipe[] =[
 
 
 ]; 
+setRecipes(recipes : Recipe[]){
+this.recipes=recipes;
+this.recipeChanges.next(recipes.slice());
+}
 addIngredientsToShopList(ingredients : Ingredient[]){
   this.shopServ.addIngredients(ingredients);
 

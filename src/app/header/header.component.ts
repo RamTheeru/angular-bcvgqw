@@ -1,5 +1,6 @@
 import { Component, OnInit,EventEmitter,Output } from '@angular/core';
-
+import {DataStorageService} from '../shared/datastorage.service';
+import {Response} from '@angular/http';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -7,12 +8,23 @@ import { Component, OnInit,EventEmitter,Output } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 @Output() featureselected = new EventEmitter<string>();
-  constructor() { }
+  constructor(private dataServ : DataStorageService) { }
 
   ngOnInit() {
   }
 Onselect(feature : string){
 this.featureselected.emit(feature);
 
+}
+storeRecipes(){
+this.dataServ.storeRecipes()
+.subscribe(
+  (response : Response)=>{
+console.log(response);
+  }
+);
+}
+getStoredRecipes(){
+  this.dataServ.getStoredRecipes();
 }
 }
