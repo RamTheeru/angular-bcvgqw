@@ -1,14 +1,14 @@
-import { Component,ngInit } from '@angular/core';
+import { Component,ngInit,OnInit } from '@angular/core';
 import{AppRoutingModule} from './app-routing/app-routing.module';
 import {LoggingService} from './logging.service';
-
+import * as firebase from 'firebase';
 @Component({
   selector: 'my-app',
   templateUrl: './app.component.html',
   styleUrls: [ './app.component.css' ],
   providers:[LoggingService]
 })
-export class AppComponent implements ngInit  {
+export class AppComponent implements ngInit,OnInit  {
   message : string = '';
 
 loadedfeature : string='recipe' ;
@@ -39,6 +39,12 @@ this.loadedfeature=feature;
   content : blueprintData.serverContent
 });
 this.message = 'New Blueprint Server added';
+  }
+  ngOnInit(){
+firebase.initializeApp({
+apiKey: "AIzaSyDgv2WMJKVYy221teC75VDYBHqhx10YBfI",
+  authDomain: "ng-recipe-book-2ef91.firebaseapp.com"
+});
   }
 
 //   nums : [] ;

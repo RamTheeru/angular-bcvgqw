@@ -1,6 +1,10 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule,ReactiveFormsModule } from '@angular/forms';
+
+import { AngularFireModule } from 'angularfire2';
+import { AngularFirestoreModule } from 'angularfire2/firestore';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
 import {HttpModule} from '@angular/http';
 import {applyMyStyle} from './MyDirective';
 import { AppComponent } from './app.component';
@@ -32,11 +36,12 @@ import { RecipeEditComponent } from './recipes/recipe-edit/recipe-edit.component
 import {DataStorageService} from './shared/datastorage.service';
 import { SignupComponent } from './auth/signup/signup.component';
 import { SigninComponent } from './auth/signin/signin.component';
+import { AuthService } from './auth/auth.service';
 
 @NgModule({
   imports:      [ BrowserModule, FormsModule,AppRoutingModule,ReactiveFormsModule,HttpModule ],
   declarations: [ AppComponent, HelloComponent,applyMyStyle, HeroesComponent, HeroDetailComponent, ServerComponent, ServersComponent, HeaderComponent, RecipesComponent, RecipeListComponent, RecipeDetailComponent, RecipeItemComponent, ShoppingListComponent, ShoppingEditComponent, CockpitComponent, ServerElementComponent, UnlessDirective, DropdownDirective, RecipeStartComponent, RecipeEditComponent, SignupComponent, SigninComponent ],
   bootstrap:    [ AppComponent ],
-  providers: [LoggingService, HeroServiceService, ShoppingListService,RecipeService,DataStorageService]
+  providers: [LoggingService, HeroServiceService, ShoppingListService,RecipeService,DataStorageService, AuthService]
 })
 export class AppModule { }
