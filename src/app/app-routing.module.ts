@@ -16,7 +16,7 @@ const appRoutes : Routes=[
      {path : 'new',component: RecipeEditComponent ,canActivate:[AuthGuard]},
      {path : ':id',component: RecipeDetailComponent },
       
-       {path : ':id/edit',component: RecipeEditComponent }
+       {path : ':id/edit',component: RecipeEditComponent,canActivate:[AuthGuard] }
   ]
   },
    {path :'shopping-list',component : ShoppingListComponent},

@@ -37,11 +37,11 @@ import {DataStorageService} from './shared/datastorage.service';
 import { SignupComponent } from './auth/signup/signup.component';
 import { SigninComponent } from './auth/signin/signin.component';
 import { AuthService } from './auth/auth.service';
-
+import{AuthGuard}from './auth/auth-gaurd.service';
 @NgModule({
   imports:      [ BrowserModule, FormsModule,AppRoutingModule,ReactiveFormsModule,HttpModule ],
   declarations: [ AppComponent, HelloComponent,applyMyStyle, HeroesComponent, HeroDetailComponent, ServerComponent, ServersComponent, HeaderComponent, RecipesComponent, RecipeListComponent, RecipeDetailComponent, RecipeItemComponent, ShoppingListComponent, ShoppingEditComponent, CockpitComponent, ServerElementComponent, UnlessDirective, DropdownDirective, RecipeStartComponent, RecipeEditComponent, SignupComponent, SigninComponent ],
   bootstrap:    [ AppComponent ],
-  providers: [LoggingService, HeroServiceService, ShoppingListService,RecipeService,DataStorageService, AuthService]
+  providers: [LoggingService, HeroServiceService, ShoppingListService,RecipeService,DataStorageService, AuthService,AuthGuard]
 })
 export class AppModule { }
