@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule,ReactiveFormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
+import {RecipesModule} from './recipes/recipe.module';
+import {SharedModule}from './shared/shared.module';
 
 import { AngularFireModule } from 'angularfire2';
 import { AngularFirestoreModule } from 'angularfire2/firestore';
@@ -16,31 +18,29 @@ import { HeroDetailComponent } from './hero-detail/hero-detail.component';
 import { ServerComponent } from './server/server.component';
 import { ServersComponent } from './servers/servers.component';
 import { HeaderComponent } from './header/header.component';
-import { RecipesComponent } from './recipes/recipes.component';
-import { RecipeListComponent } from './recipes/recipe-list/recipe-list.component';
-import { RecipeDetailComponent } from './recipes/recipe-detail/recipe-detail.component';
-import { RecipeItemComponent } from './recipes/recipe-list/recipe-item/recipe-item.component';
+
+
 import { ShoppingListComponent } from './shopping-list/shopping-list.component';
 import { ShoppingEditComponent } from './shopping-list/shopping-edit/shopping-edit.component';
 import { CockpitComponent } from './cockpit/cockpit.component';
 import { ServerElementComponent } from './server-element/server-element.component';
 import { UnlessDirective } from './unless.directive';
-import { DropdownDirective } from './shared/dropdown.directive';
+
 import { LoggingService } from './logging.service';
 import { HeroServiceService } from './hero-service.service';
 import { RecipeService } from './recipes/recipe.service';
 import { ShoppingListService } from './shopping-list/shopping-list.service';
 import {AppRoutingModule} from './app-routing.module';
-import { RecipeStartComponent } from './recipes/recipe-start/recipe-start.component';
-import { RecipeEditComponent } from './recipes/recipe-edit/recipe-edit.component';
+
 import {DataStorageService} from './shared/datastorage.service';
 import { SignupComponent } from './auth/signup/signup.component';
 import { SigninComponent } from './auth/signin/signin.component';
 import { AuthService } from './auth/auth.service';
 import{AuthGuard}from './auth/auth-gaurd.service';
+
 @NgModule({
-  imports:      [ BrowserModule, FormsModule,AppRoutingModule,ReactiveFormsModule,HttpModule ],
-  declarations: [ AppComponent, HelloComponent,applyMyStyle, HeroesComponent, HeroDetailComponent, ServerComponent, ServersComponent, HeaderComponent, RecipesComponent, RecipeListComponent, RecipeDetailComponent, RecipeItemComponent, ShoppingListComponent, ShoppingEditComponent, CockpitComponent, ServerElementComponent, UnlessDirective, DropdownDirective, RecipeStartComponent, RecipeEditComponent, SignupComponent, SigninComponent ],
+  imports:      [ BrowserModule, FormsModule,AppRoutingModule,HttpModule,RecipesModule,SharedModule ],
+  declarations: [ AppComponent, HelloComponent,applyMyStyle, HeroesComponent, HeroDetailComponent, ServerComponent, ServersComponent, HeaderComponent,  ShoppingListComponent, ShoppingEditComponent, CockpitComponent, ServerElementComponent, UnlessDirective,  SignupComponent, SigninComponent ],
   bootstrap:    [ AppComponent ],
   providers: [LoggingService, HeroServiceService, ShoppingListService,RecipeService,DataStorageService, AuthService,AuthGuard]
 })
