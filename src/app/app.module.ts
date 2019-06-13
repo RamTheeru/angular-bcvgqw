@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
+
 import {RecipesModule} from './recipes/recipe.module';
 import {SharedModule}from './shared/shared.module';
 
@@ -20,8 +20,7 @@ import { ServersComponent } from './servers/servers.component';
 import { HeaderComponent } from './header/header.component';
 
 
-import { ShoppingListComponent } from './shopping-list/shopping-list.component';
-import { ShoppingEditComponent } from './shopping-list/shopping-edit/shopping-edit.component';
+
 import { CockpitComponent } from './cockpit/cockpit.component';
 import { ServerElementComponent } from './server-element/server-element.component';
 import { UnlessDirective } from './unless.directive';
@@ -38,9 +37,11 @@ import { SigninComponent } from './auth/signin/signin.component';
 import { AuthService } from './auth/auth.service';
 import{AuthGuard}from './auth/auth-gaurd.service';
 
+import {ShoppingListModule} from './shopping-list/shopping-list.module';
+
 @NgModule({
-  imports:      [ BrowserModule, FormsModule,AppRoutingModule,HttpModule,RecipesModule,SharedModule ],
-  declarations: [ AppComponent, HelloComponent,applyMyStyle, HeroesComponent, HeroDetailComponent, ServerComponent, ServersComponent, HeaderComponent,  ShoppingListComponent, ShoppingEditComponent, CockpitComponent, ServerElementComponent, UnlessDirective,  SignupComponent, SigninComponent ],
+  imports:      [ BrowserModule,AppRoutingModule,HttpModule,RecipesModule,SharedModule,ShoppingListModule ],
+  declarations: [ AppComponent, HelloComponent,applyMyStyle, HeroesComponent, HeroDetailComponent, ServerComponent, ServersComponent, HeaderComponent, CockpitComponent, ServerElementComponent, UnlessDirective,  SignupComponent, SigninComponent ],
   bootstrap:    [ AppComponent ],
   providers: [LoggingService, HeroServiceService, ShoppingListService,RecipeService,DataStorageService, AuthService,AuthGuard]
 })
