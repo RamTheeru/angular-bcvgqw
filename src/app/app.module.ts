@@ -18,7 +18,7 @@ import { HeroDetailComponent } from './hero-detail/hero-detail.component';
 import { ServerComponent } from './server/server.component';
 import { ServersComponent } from './servers/servers.component';
 import { HeaderComponent } from './header/header.component';
-
+import {FormsModule} from '@angular/forms';
 
 
 import { CockpitComponent } from './cockpit/cockpit.component';
@@ -40,7 +40,7 @@ import{AuthGuard}from './auth/auth-gaurd.service';
 import {ShoppingListModule} from './shopping-list/shopping-list.module';
 
 @NgModule({
-  imports:      [ BrowserModule,AppRoutingModule,HttpModule,RecipesModule,SharedModule,ShoppingListModule ],
+  imports:      [ BrowserModule,AppRoutingModule,HttpModule,RecipesModule,SharedModule,FormsModule,ShoppingListModule ],
   declarations: [ AppComponent, HelloComponent,applyMyStyle, HeroesComponent, HeroDetailComponent, ServerComponent, ServersComponent, HeaderComponent, CockpitComponent, ServerElementComponent, UnlessDirective,  SignupComponent, SigninComponent ],
   bootstrap:    [ AppComponent ],
   providers: [LoggingService, HeroServiceService, ShoppingListService,RecipeService,DataStorageService, AuthService,AuthGuard]
