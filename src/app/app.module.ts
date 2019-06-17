@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
-import {RecipesModule} from './recipes/recipe.module';
 import {SharedModule}from './shared/shared.module';
 
 import { AngularFireModule } from 'angularfire2';
@@ -32,16 +31,17 @@ import { ShoppingListService } from './shopping-list/shopping-list.service';
 import {AppRoutingModule} from './app-routing.module';
 
 import {DataStorageService} from './shared/datastorage.service';
-import { SignupComponent } from './auth/signup/signup.component';
-import { SigninComponent } from './auth/signin/signin.component';
+
 import { AuthService } from './auth/auth.service';
 import{AuthGuard}from './auth/auth-gaurd.service';
+import {AuthModule} from './auth/auth.module';
 
 import {ShoppingListModule} from './shopping-list/shopping-list.module';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
-  imports:      [ BrowserModule,AppRoutingModule,HttpModule,RecipesModule,SharedModule,FormsModule,ShoppingListModule ],
-  declarations: [ AppComponent, HelloComponent,applyMyStyle, HeroesComponent, HeroDetailComponent, ServerComponent, ServersComponent, HeaderComponent, CockpitComponent, ServerElementComponent, UnlessDirective,  SignupComponent, SigninComponent ],
+  imports:      [ BrowserModule,AppRoutingModule,HttpModule,SharedModule,FormsModule,ShoppingListModule,AuthModule ],
+  declarations: [ AppComponent, HelloComponent,applyMyStyle, HeroesComponent, HeroDetailComponent, ServerComponent, ServersComponent, HeaderComponent, CockpitComponent, ServerElementComponent, UnlessDirective, HomeComponent ],
   bootstrap:    [ AppComponent ],
   providers: [LoggingService, HeroServiceService, ShoppingListService,RecipeService,DataStorageService, AuthService,AuthGuard]
 })

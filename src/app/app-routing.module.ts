@@ -2,15 +2,16 @@ import {NgModule} from '@angular/core';
 import {Routes,RouterModule} from '@angular/router';
 import {ShoppingListComponent} from './shopping-list/shopping-list.component';
 
-import {SignupComponent} from './auth/signup/signup.component';
-import {SigninComponent} from './auth/signin/signin.component';
+import {RecipesModule} from './recipes/recipe.module';
+
+import { HomeComponent } from './home/home.component';
 
 const appRoutes : Routes=[
-   {path :'',redirectTo : '/recipes',pathMatch :'full'},
+   //{path :'',redirectTo : '/recipes',pathMatch :'full'},
+{path :'',component : HomeComponent},
+{path:'recipes',loadChildren:'./recipes/recipe.module#RecipesModule'},
+   {path :'shopping-list',component : ShoppingListComponent}
 
-   {path :'shopping-list',component : ShoppingListComponent},
-   {path :'signup',component:SignupComponent},
-     {path :'signin',component:SigninComponent}
 ];
 @NgModule({
 imports : [RouterModule.forRoot(appRoutes)],
