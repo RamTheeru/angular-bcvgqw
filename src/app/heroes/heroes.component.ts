@@ -21,6 +21,6 @@ heros : Hero[] ;
     this.heros = this.heroServ.HEROES;
   }
 selectthis(shero : Hero) {
-  this.hero = shero;
+  this.hero = this.heroServ.getHero(shero.id);
 }
 }
