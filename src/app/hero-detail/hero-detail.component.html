@@ -1,7 +1,7 @@
 <div *ngIf="hro">
 
   <h2>{{hro.name | uppercase}} Details</h2>
-  <div><span>id: </span>{{hro.id}}</div>
+  <!-- <div><span>id: </span>{{hro.id}}</div> -->
   <!-- <div>
     <label>name:
       <input [(ngModel)]="hro.name" placeholder="name"/>
@@ -12,7 +12,7 @@
 
 </div> -->
 <div class="container">
-  <img src="hro.imgpath" alt="Tony" style="width:100%;">
+  <img src="{{hro.imgpath}}" alt="{{hro.name}}" style="width:100%;">
   <div class="content">
 
     <div [innerHTML]="hro.desc"></div>
