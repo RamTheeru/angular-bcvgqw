@@ -11,7 +11,7 @@ singleHero : Hero;
  imgpath : 'https://media3.mensxp.com/media/content/2018/Apr/tony-stark-quotes-proving-hes-the-coolest-avenger-1400x653-1522835488_1100x513.jpg'} ,
   { id: 2, name: 'Thor Odinson',
   desc : 
-  `Thor is a 2011 American superhero film based on the Marvel Comics character of the same name, produced by Marvel Studios and distributed by Paramount Pictures.[N 1] It is the fourth film in the Marvel Cinematic Universe (MCU). As his brother Loki plots to take the Asgardian throne, Thor must prove himself worthy.` ,
+  `Thor is a 2011 American superhero film based on the Marvel Comics character of the same name. It is the fourth film in the Marvel Cinematic Universe (MCU). As his brother Loki plots to take the Asgardian throne, Thor must prove himself worthy.` ,
  imgpath : 'https://static0.srcdn.com/wordpress/wp-content/uploads/2018/11/Avengers-4-Thor-New-Trilogy-e1554473968463.jpg?q=50&fit=crop&w=798&h=407'} ,
    { id: 3, name: 'Bruce Banner',
   desc : 
