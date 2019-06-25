@@ -10,8 +10,11 @@
 </div> -->
 <h2  class="text-primary">Marvel Heroes</h2>
 <ul class="heroes">
+
   <li *ngFor="let hero of heros" (click)="selectthis(hero)">
-    <span class="badge">{{hero.id}}</span> {{hero.name}}
+    <button>
+   {{hero.name}} 
+    </button>
   </li>
 </ul>
 
