@@ -8,14 +8,17 @@
     <input [(ngModel)]="hero.name" placeholder="name"/>
   </label>
 </div> -->
+<div class="sidebar">
 <h2  class="text-primary">Marvel Heroes</h2>
 <ul class="heroes">
 
-  <li *ngFor="let hero of heros" (click)="selectthis(hero)">
+  <li *ngFor="let hero of heros" style="list-style-type:none;" (click)="selectthis(hero)">
     <button>
    {{hero.name}} 
     </button>
   </li>
 </ul>
-
+</div>
+<div class="content">
 <app-hero-detail [hro]="hero"></app-hero-detail>
+</div>
