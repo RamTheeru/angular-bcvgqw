@@ -15,11 +15,11 @@ singleHero : Hero;
  imgpath : 'https://static0.srcdn.com/wordpress/wp-content/uploads/2018/11/Avengers-4-Thor-New-Trilogy-e1554473968463.jpg?q=50&fit=crop&w=798&h=407'} ,
    { id: 3, name: 'Bruce Banner',
   desc : 
-  `Bruce Banner is a character in the Marvel Cinematic Universe (MCU) film franchise first portrayed by Edward Norton and currently by Mark Ruffalo, based on the Marvel Comics character of the same name and known commonly by his alter ego, the Hulk. The experiment failed, and now causes Banner to transform into a green, hulking beast whenever his heart rate goes above 200 bpm or if he is placed in mortal danger.` ,
+  `Bruce Banner is a character in the Marvel Cinematic Universe (MCU) film franchise first portrayed by Edward Norton and currently by Mark Ruffalo, based on the Marvel Comics character of the same name and known commonly by his alter ego, the Hulk.` ,
  imgpath : 'https://cdn.images.express.co.uk/img/dynamic/36/750x445/997404.jpg'} ,
    { id: 4, name: 'Steve Rogerss',
   desc : 
-  `Captain America: The First Avenger is a 2011 American superhero film based on the Marvel Comics character Captain America. Produced by Marvel Studios and distributed by Paramount Pictures,[N 1] it is the fifth film in the Marvel Cinematic Universe (MCU). The film was directed by Joe Johnston, written by Christopher Markus and Stephen McFeely, and stars Chris Evans as Steve Rogers / Captain America.` ,
+  `Captain America: The First Avenger is a 2011 American superhero film based on the Marvel Comics character Captain America. Produced by Marvel Studios and distributed by Paramount Pictures,[N 1] it is the fifth film in the Marvel Cinematic Universe (MCU).` ,
  imgpath : 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQrLVMsP05rMxNYkKyghRlUNELExR3OamHvPFhLO3LOr4_DXjgk'}
   // { id: 12, name: 'Narco' },
   // { id: 13, name: 'Bombasto' },
