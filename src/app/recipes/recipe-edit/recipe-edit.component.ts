@@ -3,15 +3,18 @@ import {ActivatedRoute,Params,Router} from '@angular/router';
 import {FormGroup,FormControl,FormArray,Validators} from '@angular/forms';
 import {Recipe} from '../recipe';
 import {RecipeService} from '../recipe.service';
+import {CanComponentDeactivate} from '../../auth/can-deactivate-guard.service';
+import {Observable} from 'rxjs/Observable';
 @Component({
   selector: 'app-recipe-edit',
   templateUrl: './recipe-edit.component.html',
   styleUrls: ['./recipe-edit.component.css']
 })
-export class RecipeEditComponent implements OnInit {
+export class RecipeEditComponent implements OnInit,CanComponentDeactivate {
  id : number;
  editMode = false;
  recipeForm : FormGroup;
+ changesSaved = false;
   constructor(private route : ActivatedRoute,private recpServ : RecipeService, private router:Router) { }
 
   ngOnInit() {
@@ -65,6 +68,7 @@ export class RecipeEditComponent implements OnInit {
      this.recpServ.updateRecipe(this.id,newRecipe);
    }
    else{this.recpServ.addRecipe(newRecipe);}
+   this.changesSaved=true;
    this.oncancel();
   }
   onaddIng(){
@@ -80,6 +84,14 @@ export class RecipeEditComponent implements OnInit {
   }
   onDeleteIng(index:number){
     (<FormArray>this.recipeForm.get('ingredients')).removeAt(index);
+  }
+  canDeactivate(): Observable<boolean>|Promise<boolean>| boolean{
+     if(this.changesSaved){
+       return true;
+     }
+     else{
+       return confirm('do you want to discard changes ?');
+     }
   }
 
 }

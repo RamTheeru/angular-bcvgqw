@@ -8,6 +8,7 @@ import { RecipeDetailComponent } from '../recipes/recipe-detail/recipe-detail.co
 import { RecipeItemComponent } from '../recipes/recipe-list/recipe-item/recipe-item.component';
 import { RecipeEditComponent } from '../recipes/recipe-edit/recipe-edit.component';
 import{AuthGuard}from '../auth/auth-gaurd.service';
+import {CanDeactivateGuard} from '../auth/can-deactivate-guard.service';
 
 const recipeRoutes : Routes =[
   {path :'',component : RecipesComponent,
@@ -16,7 +17,7 @@ const recipeRoutes : Routes =[
      {path : 'new',component: RecipeEditComponent ,canActivate:[AuthGuard]},
      {path : ':id',component: RecipeDetailComponent },
       
-       {path : ':id/edit',component: RecipeEditComponent,canActivate:[AuthGuard] }
+       {path : ':id/edit',component: RecipeEditComponent,canActivate:[AuthGuard],canDeactivate:[CanDeactivateGuard] }
   ]
   },
 ];
