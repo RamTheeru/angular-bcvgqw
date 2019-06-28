@@ -35,6 +35,7 @@ import {DataStorageService} from './shared/datastorage.service';
 import { AuthService } from './auth/auth.service';
 import{AuthGuard}from './auth/auth-gaurd.service';
 import {AuthModule} from './auth/auth.module';
+import {CanDeactivateGuard} from './auth/can-deactivate-guard.service';
 
 import {ShoppingListModule} from './shopping-list/shopping-list.module';
 import { HomeComponent } from './home/home.component';
@@ -43,6 +44,6 @@ import { HomeComponent } from './home/home.component';
   imports:      [ BrowserModule,AppRoutingModule,HttpModule,SharedModule,FormsModule,ShoppingListModule,AuthModule ],
   declarations: [ AppComponent, HelloComponent,applyMyStyle, HeroesComponent, HeroDetailComponent, ServerComponent, ServersComponent, HeaderComponent, CockpitComponent, ServerElementComponent, UnlessDirective, HomeComponent ],
   bootstrap:    [ AppComponent ],
-  providers: [LoggingService, HeroServiceService, ShoppingListService,RecipeService,DataStorageService, AuthService,AuthGuard]
+  providers: [LoggingService, HeroServiceService, ShoppingListService,RecipeService,DataStorageService, AuthService,AuthGuard,CanDeactivateGuard]
 })
 export class AppModule { }
